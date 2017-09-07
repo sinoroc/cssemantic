@@ -1,0 +1,257 @@
+/* cssemantic.css */
+
+
+/*
+ * Color scheme
+ */
+
+:root {
+    --cssemantic-back:   #ffffff;
+    --cssemantic-back-h: #eeeeee;
+    --cssemantic-text-l: #999999;
+    --cssemantic-text:   #666666;
+    --cssemantic-text-h: #000000;
+    --cssemantic-accent: #005fa1;
+}
+
+
+/*
+ * Dimensions
+ */
+
+:root {
+    --cssemantic-width: 800px;
+}
+
+
+/*
+ * Header, main, footer
+ */
+
+/* centered fixed width */
+main, body > header, body > footer {
+    width: var(--cssemantic-width);
+    margin: 0 auto;
+}
+
+/* default colors */
+body {
+    background-color: var(--cssemantic-back);
+    color: var(--cssemantic-text);
+}
+
+/* title */
+body > header {
+    background-color: var(--cssemantic-back-h);
+    color: var(--cssemantic-text-h);
+    overflow: auto;
+}
+body > header > em {
+    background-color: var(--cssemantic-accent);
+    color: var(--cssemantic-back);
+    display: block;
+    padding: 0.4em;
+}
+
+/* horizontal header menu bar */
+body > header > nav > ul {
+    padding: 0;
+    margin: 0;
+}
+body > header > nav > ul > li {
+    float: left;
+    list-style-type: none;
+}
+body > header > nav > ul > li > a {
+    padding: 0.4em;
+    display: block;
+}
+body > header > nav > ul > li > a:hover {
+    background-color: var(--cssemantic-back);
+}
+
+/* main */
+body > main {
+    padding: 2em 0;
+}
+
+/* footer */
+body > footer {
+    background-color: var(--cssemantic-back-h);
+    color: var(--cssemantic-text-l);
+    overflow: auto;
+}
+body > footer > nav > ul {
+    padding: 2em;
+    float: right;
+}
+body > footer > nav > ul > li {
+    list-style-type: disc;
+}
+
+
+/*
+ * Headings
+ */
+
+/* sizes */
+h1 {font-size: 4.0em;}
+h2 {font-size: 3.0em;}
+h3 {font-size: 2.5em;}
+h4 {font-size: 2.0em;}
+h5 {font-size: 1.5em;}
+h6 {font-size: 1.2em;}
+
+/* colors */
+h1 {
+    color: var(--cssemantic-accent)
+}
+h2, h3, h4, h5, h6 {
+    color: var(--cssemantic-text)
+}
+
+/* subtitles */
+h1 > small, h2 > small, h3 > small, h4 > small, h5 > small, h6 > small {
+    color: var(--cssemantic-text-l);
+    display: block;
+    font-size: smaller;
+}
+
+/* auto number headings */
+h2 {counter-reset: hb;}
+h3 {counter-reset: hc;}
+h4 {counter-reset: hd;}
+h3:before {
+    counter-increment: hb;
+    content: counter(hb) " ";
+}
+h4:before {
+    counter-increment: hc;
+    content: counter(hb) "." counter(hc) " ";
+}
+h5:before {
+    counter-increment: hd;
+    content: counter(hb) "." counter(hc) "." counter(hd) " ";
+}
+
+
+/*
+ * Links
+ */
+
+/* color */
+a {
+    color: var(--cssemantic-text-h);
+}
+
+/* mailto links */
+a[href^="mailto"]:before {
+    content: "\01f4e7" " ";
+}
+
+
+/*
+ * Code blocks
+ */
+
+pre {
+    padding: 1em;
+    background-color: var(--cssemantic-back-h);
+    border-radius: 0.5em;
+}
+
+
+/*
+ * Forms
+ */
+
+/* border around fieldset */
+fieldset {
+    padding: 1em;
+    border: solid var(--cssemantic-back-h);
+    border-radius: 0.5em;
+}
+
+/* input fields */
+input, textarea, select {
+    color: var(--cssemantic-text);
+    background-color: var(--cssemantic-back);
+    border: solid var(--cssemantic-back-h);
+    border-radius: 0.5em;
+    padding: 0.5em;
+}
+input:focus, textarea:focus {
+    border: solid var(--cssemantic-text-l);
+}
+
+/* buttons */
+button, input[type=button], input[type=submit], input[type=reset] {
+    color: solid var(--cssemantic-text-l);
+    background-color: var(--cssemantic-back-h);
+    border: solid var(--cssemantic-text-l);
+    border-radius: 0.5em;
+    display: inline;
+    padding: 0.5em;
+}
+
+/* accent on the default button (not necessarily a button element) */
+form :default {
+    border: solid var(--cssemantic-accent);
+}
+
+
+/*
+ * Tables
+ */
+
+body {
+    counter-reset: tables;
+}
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    counter-increment: tables;
+}
+caption {
+    color: var(--cssemantic-text-l);
+    font-style: italic;
+    padding: 1em;
+}
+table > caption::before {
+    content: "Table " counter(tables) " - ";
+}
+th {
+    background: var(--cssemantic-back-h);
+}
+th, td {
+    border: solid var(--cssemantic-text-l);
+    padding: 1em;
+}
+
+
+/*
+ * Figures
+ */
+
+body {
+    counter-reset: figures;
+}
+figure {
+    counter-increment: figures;
+}
+figure > img {
+    display: block;
+    margin: 0 auto;
+}
+figure > figcaption {
+    color: var(--cssemantic-text-l);
+    font-style: italic;
+    text-align: center;
+    padding: 1em;
+}
+figure > figcaption::before {
+    content: "Figure " counter(figures) " - ";
+}
+
+
+/* EOF */
