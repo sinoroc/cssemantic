@@ -1,0 +1,33 @@
+---
+---
+
+
+<main>
+
+    {% include heading.html %}
+
+    {% for article in site.articles %}
+    <article>
+        <header>
+            <h2>
+                {{ article.title }}
+                {% if article.subtitle %}
+                <small>{{ article.subtitle }}</small>
+                {% endif %}
+            </h2>
+            {% if article.date %}
+            <time datetime="{{ article.date | date_to_xmlschema }}">
+                {{ article.date | date_to_long_string }}
+            </time>
+            {% endif %}
+            {% if article.author %}
+            <address>{{ article.author }}</address>
+            {% endif %}
+        </header>
+        <p>{{ article.excerpt }}</p>
+        <p><a href="{{ article.url | absolute_url }}">Read more&hellip;</a></p>
+    </article>
+    {% endfor %}
+
+
+</main>

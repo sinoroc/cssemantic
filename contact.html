@@ -1,0 +1,32 @@
+---
+title: Contact
+subtitle: Contact us
+contact: contact@example.com
+---
+
+
+<main>
+    {% include heading.html %}
+    <section>
+        <h2>Per email</h2>
+        <a href="mailto:{{ page.contact }}">{{ page.contact }}</a>
+    </section>
+    <section>
+        <h2>Per form</h2>
+        <form action="javascript:void(0);">
+            <fieldset>
+                <legend>Contact form</legend>
+                <dl>
+                    <dt><label for="name">Name</label></dt>
+                    <dd><input id="name" type="text" placeholder="e.g.: John Doe"></dd>
+                </dl>
+                <dl>
+                    <dt><label for="message">Message</label></dt>
+                    <dd><textarea id="message" placeholder="e.g.: Lorem ipsum"></textarea></dd>
+                </dl>
+                <input type="submit">
+                <input type="reset">
+            </fieldset>
+        </form>
+    </section>
+</main>

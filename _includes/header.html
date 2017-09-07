@@ -1,0 +1,12 @@
+<header>
+    <em>{{ site.title }}</em>
+    <nav>
+        <ul>
+            <li><a href="{{ '/index.html' | absolute_url }}">Index</a></li>
+            {% for article in site.articles %}
+            <li><a href="{{ article.url | absolute_url }}">{{ article.title }}</a></li>
+            {% endfor%}
+            <li><a href="{{ '/contact.html' | absolute_url }}">Contact</a></li>
+        </ul>
+    </nav>
+</header>

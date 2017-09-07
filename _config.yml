@@ -1,0 +1,28 @@
+# _config.yml
+
+
+title: &site_title Site
+subtitle: &site_subtitle Subtitle
+
+url: 'https://sinoroc.github.io'
+baseurl: '/cssemantic'
+
+defaults:
+    -
+        scope:
+            path: ''
+        values:
+            layout: 'default'
+    -
+        scope:
+            path: 'index.html'
+        values:
+            title: *site_title
+            subtitle: *site_subtitle
+
+collections:
+    articles:
+        output: true
+
+
+# EOF

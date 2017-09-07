@@ -1,0 +1,12 @@
+# .gitignore
+
+
+# Ruby
+Gemfile.lock
+
+
+# Jekyll
+_site/
+
+
+# EOF
