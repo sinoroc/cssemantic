@@ -1,0 +1,25 @@
+#
+
+
+image: 'ruby:2.4'
+
+
+variables:
+    JEKYLL_ENV: 'production'
+
+
+before_script:
+    - 'bundle install'
+
+
+pages:
+    script:
+        - 'bundle exec jekyll build --destination public --config _config.yml,_config_gitlab.yml'
+    artifacts:
+        paths:
+            - 'public'
+    only:
+        - 'gh-pages'
+
+
+# EOF
